@@ -31,4 +31,4 @@ arithm_dyndyntest:
 	./arithm_dyndyn
 	 	
 clean:
-	rm -f *.a *.o *.so
+	rm -f *.a *.o *.so arithm_dyndyn arithm_dynstat arithm_static
