@@ -3,9 +3,6 @@
 #include <time.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <sys/syscall.h>
 
 /* 
     Задание.
@@ -42,7 +39,7 @@ int randDelayTime()
 /* Функция добывания золота из шахты. */
 void* goldMining(void* thread_data)
 {
-    pid_t tid = syscall(__NR_gettid);
+    pid_t tid = pthread_self();
     unit* un = (unit*)thread_data;
     /* Юниты работают пока шахта не будет истощена. */
     while(mineSize != 0)
